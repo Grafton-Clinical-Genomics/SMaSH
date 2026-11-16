@@ -167,7 +167,7 @@ if  bams == ['ALL'] or bams == ['*']:
 	print (strftime("[%Y-%m-%d %H:%M:%S]"), "Selecting *.bam from current directory")
 	bams = glob.glob("*.bam")
 	print (strftime("[%Y-%m-%d %H:%M:%S]"), "Selecting *.cram from current directory")
-	bams = glob.glob("*.cram")
+	bams += glob.glob("*.cram")
 
 elif bam_comma_list == "ALL" or bam_comma_list == "*" or bam_comma_list == "*.bam" or bam_comma_list == "*.cram":
 	if bam_comma_list != "*.cram":
@@ -182,7 +182,7 @@ elif len(bam_comma_list)>4:  # has to be greater than four for the file to be x.
 elif len(bam_comma_list)>0: 
 	eprint("-bam[",bam_comma_list, "]is not valid.  use 'ALL' or a comma-separated list of BAM/SAM/CRAM files.")
 	sys.exit (1)
-
+	
 if len(bams) < 2:  
 	eprint ('Not enough sams/bams/crams specified. ')
 	sys.exit (1)
