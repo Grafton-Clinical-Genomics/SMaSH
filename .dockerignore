@@ -1,0 +1,6 @@
+Dockerfile
+.gitignore
+*pval*
+*.bam
+*.bai
+*.p
